@@ -113,11 +113,14 @@
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #dcfce7; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+        /* Menyembunyikan Scrollbar untuk Tampilan Fullscreen Sempurna */
+        ::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        * {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
         
         /* Modal */
         .modal-overlay {
@@ -247,10 +250,10 @@
                     <i class="fas fa-clock text-cyan-400"></i>
                     <span id="timer" class="font-mono text-xl font-bold">25:00</span>
                 </div>
-            </div>
+            
 
             <!-- Question Area (Scrollable) -->
-            <div class="flex-grow overflow-y-auto pr-2 pb-4">
+            <div class="flex-grow overflow-y-auto pb-4">
                 <div class="mb-4 inline-block bg-purple-900/40 text-purple-300 px-3 py-1 rounded-full text-xs font-bold border border-purple-500/30">
                     <i class="fas fa-tag mr-1"></i> <span id="q-category">Kategori</span>
                 </div>
