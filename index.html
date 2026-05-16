@@ -136,7 +136,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4">
+<body class="w-screen h-screen flex flex-col items-center justify-center m-0 p-0 overflow-hidden">
 
     <!-- Background -->
     <div class="math-grid"></div>
@@ -156,17 +156,17 @@
     </div>
 
     <!-- MAIN CONTAINER -->
-    <div class="w-full max-w-4xl relative">
+    <div class="w-full h-full relative">
         
         <!-- =================== LOGIN VIEW =================== -->
-        <div id="login-view" class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden fade-in neon-border-cyan">
+        <div id="login-view" class="glass-card w-full h-full p-8 md:p-12 relative overflow-y-auto fade-in flex flex-col justify-center border-0 rounded-none">
             
             <!-- Admin Login Button (Hidden icon) -->
-            <button id="btn-admin-access" class="absolute top-4 right-4 text-gray-500 hover:text-cyan-400 transition-colors">
+            <button id="btn-admin-access" class="absolute top-6 right-6 text-gray-500 hover:text-cyan-400 transition-colors text-2xl">
                 <i class="fas fa-lock"></i>
             </button>
 
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-6xl mx-auto flex-grow">
                 <!-- Mascot & Title -->
                 <div class="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
                     <!-- Pixar-style Math Robot SVG -->
@@ -225,14 +225,19 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Credit Footer -->
+            <div class="mt-8 text-center text-sm text-gray-400 border-t border-gray-700/50 pt-6 w-full max-w-6xl mx-auto pb-4">
+                created by : "Bu Riza Asfa, SMAN 2 Harau-Sumbar"
+            </div>
         </div>
 
         <!-- =================== QUIZ VIEW =================== -->
-        <div id="quiz-view" class="hidden glass-card rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden neon-border-purple fade-in flex flex-col h-[85vh]">
+        <div id="quiz-view" class="hidden glass-card w-full h-full relative overflow-hidden fade-in flex flex-col items-center border-0 rounded-none">
             
-            <!-- Header (Progress & Timer) -->
-            <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-700/50">
-                <div class="flex items-center gap-4 w-1/2">
+            <div class="w-full max-w-6xl flex flex-col h-full p-6 md:p-10">
+                <!-- Header (Progress & Timer) -->
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-700/50">
                     <div class="bg-gray-800 rounded-full h-4 w-full border border-gray-600 overflow-hidden">
                         <div id="progress-bar" class="bg-gradient-to-r from-cyan-500 to-purple-500 h-full w-0 transition-all duration-500"></div>
                     </div>
@@ -279,18 +284,20 @@
                     SELESAI <i class="fas fa-check-circle ml-2"></i>
                 </button>
             </div>
+            </div>
         </div>
 
         <!-- =================== RESULT VIEW =================== -->
-        <div id="result-view" class="hidden glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden neon-border-cyan fade-in text-center">
+        <div id="result-view" class="hidden glass-card w-full h-full p-8 md:p-12 relative overflow-y-auto fade-in flex flex-col items-center justify-center text-center border-0 rounded-none">
             
-            <div id="result-mascot" class="w-32 h-32 mx-auto mb-6 floating drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                <!-- Injected via JS based on score -->
-            </div>
+            <div class="w-full max-w-4xl mx-auto">
+                <div id="result-mascot" class="w-40 h-40 mx-auto mb-8 floating drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                    <!-- Injected via JS based on score -->
+                </div>
 
-            <h2 class="text-3xl font-bold mb-2">Kuis Selesai!</h2>
-            <p id="result-name-class" class="text-gray-400 text-lg mb-8">Nama - Kelas</p>
-
+                <h2 class="text-3xl font-bold mb-2">Kuis Selesai!</h2>
+                <p id="result-name-class" class="text-gray-400 text-lg mb-8">Nama - Kelas</p>
+                
             <div class="bg-gray-900/60 rounded-2xl p-6 border border-gray-700 inline-block w-full max-w-md mb-8 relative">
                 <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
                     SKOR AKHIR
@@ -317,18 +324,20 @@
             <button id="btn-back-home" class="bg-gray-800 border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 text-white font-bold py-3 px-8 rounded-full transition-all">
                 Kembali ke Beranda
             </button>
+            </div>
         </div>
 
         <!-- =================== DASHBOARD VIEW (TEACHER) =================== -->
-        <div id="dashboard-view" class="hidden glass-card rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden neon-border-purple fade-in">
-            <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
-                <h2 class="text-2xl md:text-3xl font-bold neon-text-purple">
-                    <i class="fas fa-chart-line mr-2"></i> Rekap Nilai Kelas
-                </h2>
-                <button id="btn-exit-dashboard" class="text-gray-400 hover:text-red-400 transition-colors">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
+        <div id="dashboard-view" class="hidden glass-card w-full h-full relative overflow-hidden fade-in flex flex-col items-center border-0 rounded-none">
+            <div class="w-full max-w-7xl flex flex-col h-full p-6 md:p-10">
+                <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
+                    <h2 class="text-2xl md:text-3xl font-bold neon-text-purple">
+                        <i class="fas fa-chart-line mr-2"></i> Rekap Nilai Kelas
+                    </h2>
+                    <button id="btn-exit-dashboard" class="text-gray-400 hover:text-red-400 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
 
             <!-- Stats Bar -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -370,7 +379,7 @@
             </div>
 
             <!-- Table -->
-            <div class="overflow-x-auto bg-gray-900/50 rounded-xl border border-gray-700 max-h-80">
+            <div class="flex-grow overflow-auto bg-gray-900/50 rounded-xl border border-gray-700">
                 <table class="w-full text-sm text-left">
                     <thead class="text-xs text-gray-400 uppercase bg-gray-800/80 sticky top-0">
                         <tr>
@@ -387,6 +396,7 @@
                         <tr><td colspan="6" class="text-center py-4 text-gray-500 italic">Memuat data...</td></tr>
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
 
@@ -695,7 +705,7 @@
             // Ganti URL di bawah ini dengan URL Web App dari langkah ke-3 di file panduan
             const scriptURLSheets = 'https://script.google.com/macros/s/AKfycbxufBSiMwBzfCgpYQgVNWDyUn_Fgm9nN0S19LY9mi8wP-murw1R1MGjHYiopPnArQM05g/exec'; 
             
-            if(scriptURLSheets !== 'MASUKKAN_URL_WEB_APP_DI_SINI') {
+            if(scriptURLSheets !== 'https://script.google.com/macros/s/AKfycbwdqBvD2cKSK2Nh4cGyyWsABW0Bjz2PgczBfhStGECjObCvNdfsHygt-RCHeAqExuX4zQ/exec') {
                 // Mengemas data agar cocok dikirim ke Google Apps Script tanpa error CORS
                 const formData = new URLSearchParams();
                 formData.append('nama', currentStudent.nama);
